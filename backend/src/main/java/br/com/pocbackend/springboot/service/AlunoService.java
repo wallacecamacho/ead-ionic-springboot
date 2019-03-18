@@ -31,7 +31,7 @@ public class AlunoService {
 	}
 	
 	public int updateAluno(Aluno aluno) {		
-		return jdbcTemplate.update(Queries.UPDATE_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone(), aluno.getEmail() });
+		return jdbcTemplate.update(Queries.UPDATE_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone(), aluno.getEmail(), aluno.getIdAluno() });
 	}
 
 }
