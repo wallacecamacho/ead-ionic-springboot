@@ -3,6 +3,8 @@ package br.com.pocbackend.springboot.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the ALUNOS database table.
@@ -18,9 +20,10 @@ public class Aluno implements Serializable {
 	private String endereco;
 	private String estado;
 	private String municipio;
-	private String senha;
-	private String telefone;
-	private Usuario usuario;
+	private String telefone;	
+	@JsonIgnore
+	private Usuario usuario;	
+	@JsonIgnore
 	private List<Matricula> matriculas;
 
 	public Aluno() {
@@ -73,14 +76,6 @@ public class Aluno implements Serializable {
 
 	public void setMunicipio(String municipio) {
 		this.municipio = municipio;
-	}
-
-	public String getSenha() {
-		return this.senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
 	}
 
 	public String getTelefone() {

@@ -3,6 +3,8 @@ package br.com.pocbackend.springboot.model;
 import java.io.Serializable;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the USUARIOS database table.
@@ -14,6 +16,7 @@ public class Usuario implements Serializable {
 	private String email;
 	private String perfil;
 	private String senha;
+	@JsonIgnore
 	private List<Aluno> alunos;
 
 	public Usuario() {

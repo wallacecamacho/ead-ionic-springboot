@@ -5,6 +5,8 @@ import java.util.List;
 
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the CURSOS database table.
@@ -13,13 +15,24 @@ import javax.persistence.OneToMany;
 public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
+	private Long idCurso;
 	private String codigo;
 	private String anoSemestre;
 	private String nome;
+	@JsonIgnore
 	private List<Avaliacao> avaliacoes;
+	@JsonIgnore
 	private List<Matricula> matriculas;
 
 	public Curso() {
+	}
+	
+	public Long getIdCurso() {
+		return idCurso;
+	}
+
+	public void setIdCurso(Long idCurso) {
+		this.idCurso = idCurso;
 	}
 
 	public String getCodigo() {

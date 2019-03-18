@@ -3,6 +3,8 @@ package br.com.pocbackend.springboot.model;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * The persistent class for the MATRICULAS database table.
@@ -11,20 +13,22 @@ import java.util.Date;
 public class Matricula implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	private Long id;
+	private Long idMatricula;
 	private Date dataMatricula;
+	@JsonIgnore
 	private Aluno aluno;
+	@JsonIgnore
 	private Curso curso;
 
 	public Matricula() {
 	}
 
-	public Long getId() {
-		return this.id;
+	public Long getIdMatricula() {
+		return idMatricula;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setIdMatricula(Long idMatricula) {
+		this.idMatricula = idMatricula;
 	}
 
 	public Date getDataMatricula() {
