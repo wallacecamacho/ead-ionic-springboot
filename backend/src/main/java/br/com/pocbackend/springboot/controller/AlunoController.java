@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,9 +47,14 @@ public class AlunoController {
 	
 	@ApiOperation("aluno - put")
 	@PutMapping(path="/alunos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-
 	public int putAluno(@RequestBody Aluno aluno) {
 		return alunoService.updateAluno(aluno);
+	}
+	
+	@ApiOperation("aluno - delete")
+	@DeleteMapping(path="/alunos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public int deleteAluno(@PathVariable Long idAluno) {
+		return alunoService.deleteAluno(idAluno);
 	}
 	
 }

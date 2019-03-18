@@ -25,5 +25,17 @@ public class NotaService {
 		return (Nota) jdbcTemplate.queryForObject(Queries.LIST_NOTA_BY_ID, new Object[] { idNota },
 				new BeanPropertyRowMapper<Nota>(Nota.class));
 	}
+	
+	public int insertNota(Nota nota) {		
+		return jdbcTemplate.update(Queries.INSERT_NOTA, new Object[] { nota.getNota(), nota.getCurso().getIdCurso(), nota.getAvaliacao().getIdAvaliacao() });
+	}
+	
+	public int updateNota(Nota nota) {		
+		return jdbcTemplate.update(Queries.UPDATE_NOTA, new Object[] { nota.getNota(), nota.getIdNota() });
+	}
+	
+	public int deleteNota(Long idNota) {		
+		return jdbcTemplate.update(Queries.DElETE_NOTA, new Object[] { idNota });
+	}
 
 }

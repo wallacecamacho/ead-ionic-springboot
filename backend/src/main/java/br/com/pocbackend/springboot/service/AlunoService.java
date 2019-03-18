@@ -27,11 +27,15 @@ public class AlunoService {
 	}
 	
 	public int insertAluno(Aluno aluno) {		
-		return jdbcTemplate.update(Queries.INSERT_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone(), aluno.getEmail() });
+		return jdbcTemplate.update(Queries.INSERT_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone() });
 	}
 	
 	public int updateAluno(Aluno aluno) {		
-		return jdbcTemplate.update(Queries.UPDATE_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone(), aluno.getEmail(), aluno.getIdAluno() });
+		return jdbcTemplate.update(Queries.UPDATE_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone(), aluno.getIdAluno() });
+	}
+	
+	public int deleteAluno(Long idAluno) {		
+		return jdbcTemplate.update(Queries.DElETE_ALUNO, new Object[] { idAluno });
 	}
 
 }

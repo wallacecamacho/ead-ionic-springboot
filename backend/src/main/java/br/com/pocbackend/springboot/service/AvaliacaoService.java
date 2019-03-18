@@ -25,5 +25,17 @@ public class AvaliacaoService {
 		return (Avaliacao) jdbcTemplate.queryForObject(Queries.LIST_AVALIACAO_BY_ID, new Object[] { idAvaliacao },
 				new BeanPropertyRowMapper<Avaliacao>(Avaliacao.class));
 	}
+	
+	public int insertAvaliacao(Avaliacao avaliacao) {		
+		return jdbcTemplate.update(Queries.INSERT_AVALIACAO, new Object[] { avaliacao.getNomeAvaliacao(), avaliacao.getData(), avaliacao.getCurso().getIdCurso() });
+	}
+	
+	public int updateAvaliacao(Avaliacao avaliacao) {		
+		return jdbcTemplate.update(Queries.UPDATE_AVALIACAO, new Object[] { avaliacao.getNomeAvaliacao(), avaliacao.getData(), avaliacao.getCurso().getIdCurso(), avaliacao.getIdAvaliacao() });
+	}
+	
+	public int deleteAvaliacao(Long idAvaliacao) {		
+		return jdbcTemplate.update(Queries.DElETE_AVALIACAO, new Object[] { idAvaliacao });
+	}
 
 }

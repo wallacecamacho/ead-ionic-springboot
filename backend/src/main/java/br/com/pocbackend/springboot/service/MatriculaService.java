@@ -22,8 +22,13 @@ public class MatriculaService {
 	}
 
 	public Matricula retrieveMatricula(Long idMatricula) {
-		return (Matricula) jdbcTemplate.queryForObject(Queries.LIST_ALUNOS_BY_ID, new Object[] { idMatricula },
+		return (Matricula) jdbcTemplate.queryForObject(Queries.LIST_MATRICULA_BY_ID, new Object[] { idMatricula },
 				new BeanPropertyRowMapper<Matricula>(Matricula.class));
 	}
+	
+	public int insertMatricula(Matricula matricula) {		
+		return jdbcTemplate.update(Queries.INSERT_MATRICULA, new Object[] { matricula.getDataMatricula(), matricula.getAluno().getIdAluno(), matricula.getCurso().getIdCurso() });
+	}
+
 
 }

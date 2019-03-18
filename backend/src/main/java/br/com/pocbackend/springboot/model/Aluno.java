@@ -16,7 +16,6 @@ public class Aluno implements Serializable {
 
 	private Long idAluno;
 	private String cpf;
-	private String email;
 	private String endereco;
 	private String estado;
 	private String municipio;
@@ -44,14 +43,6 @@ public class Aluno implements Serializable {
 
 	public void setCpf(String cpf) {
 		this.cpf = cpf;
-	}
-
-	public String getEmail() {
-		return this.email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
 	}
 
 	public String getEndereco() {

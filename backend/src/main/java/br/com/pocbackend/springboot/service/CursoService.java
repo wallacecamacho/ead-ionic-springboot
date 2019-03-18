@@ -25,5 +25,17 @@ public class CursoService {
 		return (Curso) jdbcTemplate.queryForObject(Queries.LIST_CURSO_BY_ID, new Object[] { idCurso },
 				new BeanPropertyRowMapper<Curso>(Curso.class));
 	}
+	
+	public int insertCurso(Curso curso) {		
+		return jdbcTemplate.update(Queries.INSERT_CURSO, new Object[] { curso.getCodigo(), curso.getNome(), curso.getAnoSemestre() });
+	}
+	
+	public int updateCurso(Curso curso) {		
+		return jdbcTemplate.update(Queries.UPDATE_CURSO, new Object[] { curso.getCodigo(), curso.getNome(), curso.getAnoSemestre(), curso.getIdCurso() });
+	}
+	
+	public int deleteCurso(Long idCurso) {		
+		return jdbcTemplate.update(Queries.DElETE_CURSO, new Object[] { idCurso });
+	}
 
 }
