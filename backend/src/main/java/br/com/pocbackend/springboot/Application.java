@@ -12,13 +12,14 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.transaction.PlatformTransactionManager;
 
+
 @SpringBootApplication
 public class Application {
 
 	public static void main(String[] args) {
 		ApplicationContext ctx = SpringApplication.run(Application.class, args);
 	}
-
+	
 	@Bean
 	@Autowired
 	public PlatformTransactionManager transactionManager(DataSource dataSource) {
@@ -26,15 +27,17 @@ public class Application {
 	}
 
 	@Bean
-	public DataSource dataSource(@Value("${database.url}") String url, @Value("${database.username}") String username,
+	public DataSource dataSource(
+			@Value("${database.url}") String url,
+			@Value("${database.username}") String username,
 			@Value("${database.password}") String password) {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
-		dataSource.setUrl(url);
-		dataSource.setUsername(username);
-		dataSource.setPassword(password);
-
-		return dataSource;
+        dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+        dataSource.setUrl(url);
+        dataSource.setUsername(username);
+        dataSource.setPassword(password);
+ 
+        return dataSource;
 	}
-
+	
 }
