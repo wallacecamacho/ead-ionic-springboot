@@ -14,7 +14,7 @@ public class ChargeBackException extends NestedRuntimeException {
 	public ChargeBackException(HttpStatus status) {
 		this(status, null, null);
 	}
-
+	
 	public ChargeBackException(HttpStatus status, @Nullable String message) {
 		this(status, message, null);
 	}

@@ -51,6 +51,13 @@ public class RestExceptionHandler extends ResponseEntityExceptionHandler {
           request.getDescription(false));
       return new ResponseEntity<>(errorDetails, HttpStatus.INTERNAL_SERVER_ERROR);
     }
+    
+    @ExceptionHandler(CodigoExistenteException.class)
+    public final ResponseEntity<ErrorDetails> handleChargeBackException(CodigoExistenteException ex, WebRequest request) {
+      ErrorDetails errorDetails = new ErrorDetails(new Date(), ex.getMessage(),
+          request.getDescription(false));
+      return new ResponseEntity<>(errorDetails, HttpStatus.BAD_REQUEST);
+    }
 
 
     private ResponseEntity<Object> buildResponseEntity(ErrorDetails errorDetails) {

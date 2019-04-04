@@ -43,13 +43,13 @@ public class CursoController {
 	
 	@ApiOperation("Curso - post")
 	@PostMapping(path="/cursos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public int postCurso(@RequestBody Curso curso) {
+	public Curso postCurso(@RequestBody Curso curso) {
 		return CursoService.insertCurso(curso);
 	}
 	
 	@ApiOperation("Curso - put")
 	@PutMapping(path="/cursos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public int putCurso(@RequestBody Curso curso) {
+	public Curso putCurso(@RequestBody Curso curso) {
 		return CursoService.updateCurso(curso);
 	}
 	

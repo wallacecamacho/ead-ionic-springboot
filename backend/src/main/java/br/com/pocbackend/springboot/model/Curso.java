@@ -16,7 +16,7 @@ public class Curso implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long idCurso;
-	private String codigo;
+	private String codigoCurso;
 	private String anoSemestre;
 	private String nome;
 	@JsonIgnore
@@ -35,12 +35,12 @@ public class Curso implements Serializable {
 		this.idCurso = idCurso;
 	}
 
-	public String getCodigo() {
-		return this.codigo;
+	public String getCodigoCurso() {
+		return codigoCurso;
 	}
 
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
+	public void setCodigoCurso(String codigoCurso) {
+		this.codigoCurso = codigoCurso;
 	}
 
 	public String getAnoSemestre() {

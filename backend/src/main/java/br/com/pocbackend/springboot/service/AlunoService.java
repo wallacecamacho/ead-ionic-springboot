@@ -6,11 +6,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import br.com.pocbackend.springboot.model.Aluno;
 import br.com.pocbackend.springboot.service.queryconstants.Queries;
 
-@Component
+//@Component
+@Service
 public class AlunoService {
 
 	@Autowired
