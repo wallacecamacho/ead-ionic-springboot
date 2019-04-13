@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import br.com.pocbackend.springboot.model.Usuario;
 import br.com.pocbackend.springboot.service.queryconstants.Queries;
 
-@Component
+@Service
 public class UsuarioService {
 
 	@Autowired

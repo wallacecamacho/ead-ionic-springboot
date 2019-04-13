@@ -28,33 +28,33 @@ public class NotaController {
 	private NotaService NotaService;
 
 	@ApiOperation("Notas")
-	@GetMapping(path = "/Notas", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/notas", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Nota>retrieveNotas() {
 		return NotaService.retrieveAllNotas();
 	}
 
 	@ApiOperation("Notas - id")
-	@GetMapping(path="/Notas/{idNota}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path="/notas/{idNota}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public Nota retrieveNota(@PathVariable Long idNota) {
 		return NotaService.retrieveNota(idNota);
 	}
 	
 	@ApiOperation("Nota - post")
-	@PostMapping(path="/Notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PostMapping(path="/notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public int postNota(@RequestBody Nota nota) {
 		return NotaService.insertNota(nota);
 	}
 	
 	@ApiOperation("Nota - put")
-	@PutMapping(path="/Notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@PutMapping(path="/notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public int putNota(@RequestBody Nota nota) {
 		return NotaService.updateNota(nota);
 	}
 	
 	@ApiOperation("Nota - delete")
-	@DeleteMapping(path="/Notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(path="/notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public int deleteNota(@PathVariable Long idNota) {
 		return NotaService.deleteNota(idNota);
 	}

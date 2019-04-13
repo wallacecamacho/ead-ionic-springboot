@@ -28,33 +28,33 @@ public class AvaliacaoController {
 	private AvaliacaoService AvaliacaoService;
 
 	@ApiOperation("Avaliacaos")
-	@GetMapping(path = "/Avaliacaos", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/avaliacoes", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Avaliacao>retrieveAvaliacaos() {
 		return AvaliacaoService.retrieveAllAvaliacaos();
 	}
 
 	@ApiOperation("Avaliacaos - id")
-	@GetMapping(path="/Avaliacaos/{idAvaliacao}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path="/avaliacoes/{idAvaliacao}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public Avaliacao retrieveAvaliacao(@PathVariable Long idAvaliacao) {
 		return AvaliacaoService.retrieveAvaliacao(idAvaliacao);
 	}
 	
 	@ApiOperation("Avaliacao - post")
-	@PostMapping(path="/Avaliacaos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public int postAvaliacao(@RequestBody Avaliacao avaliacao) {
+	@PostMapping(path="/avaliacoes", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Avaliacao postAvaliacao(@RequestBody Avaliacao avaliacao) {
 		return AvaliacaoService.insertAvaliacao(avaliacao);
 	}
 	
 	@ApiOperation("Avaliacao - put")
-	@PutMapping(path="/Avaliacaos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public int putAvaliacao(@RequestBody Avaliacao avaliacao) {
+	@PutMapping(path="/avaliacoes", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public Avaliacao putAvaliacao(@RequestBody Avaliacao avaliacao) {
 		return AvaliacaoService.updateAvaliacao(avaliacao);
 	}
 	
 	@ApiOperation("Avaliacao - delete")
-	@DeleteMapping(path="/Avaliacaos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(path="/avaliacoes", produces = MediaType.APPLICATION_JSON_VALUE)
 	public int deleteAvaliacao(@PathVariable Long idAvaliacao) {
 		return AvaliacaoService.deleteAvaliacao(idAvaliacao);
 	}

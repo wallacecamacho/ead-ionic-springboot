@@ -5,33 +5,47 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import br.com.pocbackend.springboot.model.Avaliacao;
+import br.com.pocbackend.springboot.service.mapper.AvaliacaoMapper;
 import br.com.pocbackend.springboot.service.queryconstants.Queries;
 
-@Component
+@Service
 public class AvaliacaoService {
 
 	@Autowired
 	JdbcTemplate jdbcTemplate;
 
 	public List<Avaliacao> retrieveAllAvaliacaos() {
-		List<Avaliacao> alunos = jdbcTemplate.query(Queries.LIST_AVALIACOES, new BeanPropertyRowMapper<Avaliacao>(Avaliacao.class));
+		List<Avaliacao> alunos = jdbcTemplate.query(Queries.LIST_AVALIACOES, new AvaliacaoMapper());
 		return alunos;
 	}
 
 	public Avaliacao retrieveAvaliacao(Long idAvaliacao) {
 		return (Avaliacao) jdbcTemplate.queryForObject(Queries.LIST_AVALIACAO_BY_ID, new Object[] { idAvaliacao },
-				new BeanPropertyRowMapper<Avaliacao>(Avaliacao.class));
+				new AvaliacaoMapper());
 	}
 	
-	public int insertAvaliacao(Avaliacao avaliacao) {		
-		return jdbcTemplate.update(Queries.INSERT_AVALIACAO, new Object[] { avaliacao.getNomeAvaliacao(), avaliacao.getData(), avaliacao.getCurso().getIdCurso() });
+	public Avaliacao retrieveAvaliacaoPorCurso(Long idCurso) {
+		return (Avaliacao) jdbcTemplate.queryForObject(Queries.LIST_AVALIACAO_BY_ID_CURSO, new Object[] { idCurso },
+				new AvaliacaoMapper());
 	}
 	
-	public int updateAvaliacao(Avaliacao avaliacao) {		
-		return jdbcTemplate.update(Queries.UPDATE_AVALIACAO, new Object[] { avaliacao.getNomeAvaliacao(), avaliacao.getData(), avaliacao.getCurso().getIdCurso(), avaliacao.getIdAvaliacao() });
+	public Avaliacao insertAvaliacao(Avaliacao avaliacao) {
+		int result = jdbcTemplate.update(Queries.INSERT_AVALIACAO, new Object[] { avaliacao.getNomeAvaliacao(), avaliacao.getDataAvaliacao(), avaliacao.getCurso().getIdCurso() });
+		if(result > 0) {
+			return avaliacao;
+		}
+		return null;
+	}
+	
+	public Avaliacao updateAvaliacao(Avaliacao avaliacao) {		
+		int result = jdbcTemplate.update(Queries.UPDATE_AVALIACAO, new Object[] { avaliacao.getNomeAvaliacao(), avaliacao.getDataAvaliacao(), avaliacao.getCurso().getIdCurso(), avaliacao.getIdAvaliacao() });
+		if(result > 0) {
+			return avaliacao;
+		}
+		return null;
 	}
 	
 	public int deleteAvaliacao(Long idAvaliacao) {		

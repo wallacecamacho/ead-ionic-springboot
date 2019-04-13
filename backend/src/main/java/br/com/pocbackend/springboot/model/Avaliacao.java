@@ -14,9 +14,8 @@ public class Avaliacao implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private Long idAvaliacao;
-	private Date data;
+	private String dataAvaliacao;
 	private String nomeAvaliacao;
-	@JsonIgnore
 	private Curso curso;
 
 	public Avaliacao() {
@@ -30,12 +29,12 @@ public class Avaliacao implements Serializable {
 		this.idAvaliacao = idAvaliacao;
 	}
 
-	public Date getData() {
-		return this.data;
+	public String getDataAvaliacao() {
+		return dataAvaliacao;
 	}
 
-	public void setData(Date data) {
-		this.data = data;
+	public void setDataAvaliacao(String dataAvaliacao) {
+		this.dataAvaliacao = dataAvaliacao;
 	}
 
 	public String getNomeAvaliacao() {

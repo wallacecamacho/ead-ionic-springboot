@@ -52,9 +52,10 @@ public class CursoController {
 	public Curso putCurso(@RequestBody Curso curso) {
 		return CursoService.updateCurso(curso);
 	}
-	
+
 	@ApiOperation("Curso - delete")
-	@DeleteMapping(path="/cursos", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(path="/cursos/{idCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
 	public int deleteCurso(@PathVariable Long idCurso) {
 		return CursoService.deleteCurso(idCurso);
 	}

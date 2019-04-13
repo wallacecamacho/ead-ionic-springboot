@@ -5,12 +5,12 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import br.com.pocbackend.springboot.model.Nota;
 import br.com.pocbackend.springboot.service.queryconstants.Queries;
 
-@Component
+@Service
 public class NotaService {
 
 	@Autowired
@@ -23,6 +23,11 @@ public class NotaService {
 
 	public Nota retrieveNota(Long idNota) {
 		return (Nota) jdbcTemplate.queryForObject(Queries.LIST_NOTA_BY_ID, new Object[] { idNota },
+				new BeanPropertyRowMapper<Nota>(Nota.class));
+	}
+	
+	public Nota retrieveNotaPorAvaliacao(Long idNota) {
+		return (Nota) jdbcTemplate.queryForObject(Queries.LIST_NOTA_BY_ID_AVALIACAO, new Object[] { idNota },
 				new BeanPropertyRowMapper<Nota>(Nota.class));
 	}
 	
