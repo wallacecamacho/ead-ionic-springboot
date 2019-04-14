@@ -14,7 +14,7 @@ import br.com.pocbackend.springboot.service.queryconstants.Queries;
 public class MatriculaService {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public List<Matricula> retrieveAllMatriculas() {
 		List<Matricula> alunos = jdbcTemplate.query(Queries.LIST_MATRICULAS, new BeanPropertyRowMapper<Matricula>(Matricula.class));

@@ -3,8 +3,6 @@ package br.com.pocbackend.springboot.model;
 import java.io.Serializable;
 import java.util.List;
 
-import javax.persistence.OneToMany;
-
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
@@ -50,9 +48,6 @@ public class Curso implements Serializable {
 	public void setAnoSemestre(String anoSemestre) {
 		this.anoSemestre = anoSemestre;
 	}
-
-	//bi-directional many-to-one association to Aluno
-	@OneToMany(mappedBy="usuario")
 
 	public String getNome() {
 		return this.nome;

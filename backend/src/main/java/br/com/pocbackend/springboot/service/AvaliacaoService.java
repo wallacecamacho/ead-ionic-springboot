@@ -15,7 +15,7 @@ import br.com.pocbackend.springboot.service.queryconstants.Queries;
 public class AvaliacaoService {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public List<Avaliacao> retrieveAllAvaliacaos() {
 		List<Avaliacao> alunos = jdbcTemplate.query(Queries.LIST_AVALIACOES, new AvaliacaoMapper());

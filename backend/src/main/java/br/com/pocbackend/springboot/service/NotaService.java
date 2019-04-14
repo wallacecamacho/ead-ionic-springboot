@@ -14,7 +14,7 @@ import br.com.pocbackend.springboot.service.queryconstants.Queries;
 public class NotaService {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public List<Nota> retrieveAllNotas() {
 		List<Nota> alunos = jdbcTemplate.query(Queries.LIST_AVALIACOES, new BeanPropertyRowMapper<Nota>(Nota.class));

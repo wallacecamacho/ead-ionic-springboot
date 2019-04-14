@@ -16,7 +16,7 @@ import br.com.pocbackend.springboot.service.queryconstants.Queries;
 public class CursoService {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public List<Curso> retrieveAllCursos() {
 		List<Curso> alunos = jdbcTemplate.query(Queries.LIST_CURSOS, new BeanPropertyRowMapper<Curso>(Curso.class));

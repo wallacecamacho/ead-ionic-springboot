@@ -40,7 +40,7 @@ public class UsuarioController {
 	
 	@ApiOperation("usuario - post")
 	@PostMapping(path="/usuarios", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public int postAluno(@RequestBody Usuario usuario) {
+	public Usuario postAluno(@RequestBody Usuario usuario) {
 		return usuarioService.insertUsuario(usuario);
 	}
 	

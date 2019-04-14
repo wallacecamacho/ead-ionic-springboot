@@ -14,7 +14,7 @@ import br.com.pocbackend.springboot.service.queryconstants.Queries;
 public class AlunoService {
 
 	@Autowired
-	JdbcTemplate jdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 
 	public List<Aluno> retrieveAllAlunos() {
 		List<Aluno> alunos = jdbcTemplate.query(Queries.LIST_ALUNOS, new BeanPropertyRowMapper<Aluno>(Aluno.class));

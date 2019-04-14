@@ -1,9 +1,6 @@
 package br.com.pocbackend.springboot.model;
 
 import java.io.Serializable;
-import java.util.List;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 /**
@@ -17,8 +14,7 @@ public class Usuario implements Serializable {
 	private String email;
 	private String perfil;
 	private String senha;
-	@JsonIgnore
-	private List<Aluno> alunos;
+	private Aluno aluno;
 
 	public Usuario() {
 	}
@@ -55,26 +51,14 @@ public class Usuario implements Serializable {
 		this.senha = senha;
 	}
 
-	public List<Aluno> getAlunos() {
-		return this.alunos;
-	}
-
-	public void setAlunos(List<Aluno> alunos) {
-		this.alunos = alunos;
-	}
-
-	public Aluno addAluno(Aluno aluno) {
-		getAlunos().add(aluno);
-		aluno.setUsuario(this);
-
+	public Aluno getAluno() {
 		return aluno;
 	}
 
-	public Aluno removeAluno(Aluno aluno) {
-		getAlunos().remove(aluno);
-		aluno.setUsuario(null);
-
-		return aluno;
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
 	}
+
+
 
 }
