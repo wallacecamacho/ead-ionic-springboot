@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import br.com.pocbackend.springboot.model.Matricula;
+import br.com.pocbackend.springboot.service.mapper.MatriculaMapper;
 import br.com.pocbackend.springboot.service.queryconstants.Queries;
 
 @Service
@@ -17,7 +18,7 @@ public class MatriculaService {
 	private JdbcTemplate jdbcTemplate;
 
 	public List<Matricula> retrieveAllMatriculas() {
-		List<Matricula> alunos = jdbcTemplate.query(Queries.LIST_MATRICULAS, new BeanPropertyRowMapper<Matricula>(Matricula.class));
+		List<Matricula> alunos = jdbcTemplate.query(Queries.LIST_MATRICULAS, new MatriculaMapper());
 		return alunos;
 	}
 

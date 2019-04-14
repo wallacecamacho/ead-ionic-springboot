@@ -39,9 +39,9 @@ public class UsuarioService {
 		int resultInsert = jdbcTemplate.update(Queries.INSERT_USUARIO, new Object[] { usuario.getEmail(), usuario.getSenha(), usuario.getPerfil(), });
 		if(resultInsert > 0) {
 			Usuario user = this.retrieveUsuarioByEmail(usuario.getEmail());
-			Aluno aluno = new Aluno();
+			Aluno aluno = usuario.getAluno();
 			aluno.setUsuario(user);
-			alunoService.insertAluno(aluno);
+			int alunoInsert  = alunoService.insertAluno(aluno);
 		}
 		return null;
 	}

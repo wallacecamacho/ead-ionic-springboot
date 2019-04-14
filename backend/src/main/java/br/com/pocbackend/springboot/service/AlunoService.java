@@ -27,7 +27,7 @@ public class AlunoService {
 	}
 	
 	public int insertAluno(Aluno aluno) {		
-		return jdbcTemplate.update(Queries.INSERT_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone() });
+		return jdbcTemplate.update(Queries.INSERT_ALUNO, new Object[] { aluno.getCpf(), aluno.getEndereco(), aluno.getEstado(), aluno.getMunicipio(), aluno.getTelefone(), aluno.getUsuario().getIdUsuario() });
 	}
 	
 	public int updateAluno(Aluno aluno) {		
