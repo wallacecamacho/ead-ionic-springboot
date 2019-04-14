@@ -7,7 +7,6 @@ import org.springframework.jdbc.core.RowMapper;
 
 import br.com.pocbackend.springboot.model.Aluno;
 import br.com.pocbackend.springboot.model.Matricula;
-import br.com.pocbackend.springboot.model.Usuario;
 
 public class MatriculaMapper implements RowMapper<Matricula> {
 	public Matricula mapRow(ResultSet rs, int rowNum) throws SQLException {
@@ -23,13 +22,8 @@ public class MatriculaMapper implements RowMapper<Matricula> {
 		matricula.setIdMatricula(rs.getLong("id_matricula"));
 		matricula.setDataMatricula(rs.getDate("data_matricula"));
 		
-		Usuario usuario = new Usuario();
-		usuario.setEmail(rs.getString("email"));
-		usuario.setIdUsuario(rs.getLong("id_usuario"));
-		usuario.setPerfil(rs.getString("perfil"));
-
+		matricula.setAluno(aluno);
 		aluno.addMatricula(matricula);
-		aluno.setUsuario(usuario);
 
 		
 		return matricula;
