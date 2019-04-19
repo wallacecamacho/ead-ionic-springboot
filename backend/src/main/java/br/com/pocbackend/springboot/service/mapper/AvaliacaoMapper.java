@@ -17,6 +17,8 @@ public class AvaliacaoMapper implements RowMapper<Avaliacao> {
 		avaliacao.setCurso(new Curso());
 		avaliacao.getCurso().setIdCurso(rs.getLong("id_curso"));
 		
+		
+		
 		return avaliacao;
 	}
 }

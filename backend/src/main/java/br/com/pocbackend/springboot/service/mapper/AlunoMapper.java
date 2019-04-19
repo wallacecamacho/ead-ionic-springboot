@@ -18,6 +18,7 @@ public class AlunoMapper implements RowMapper<Aluno> {
 		aluno.setMunicipio(rs.getString("municipio"));
 		aluno.setTelefone(rs.getString("telefone"));
 		aluno.setCpf(rs.getString("cpf"));
+		aluno.setNome(rs.getString("nome"));
 		
 		Matricula matricula = new Matricula();
 		matricula.setIdMatricula(rs.getLong("id_matricula"));
@@ -28,9 +29,8 @@ public class AlunoMapper implements RowMapper<Aluno> {
 		usuario.setIdUsuario(rs.getLong("id_usuario"));
 		usuario.setPerfil(rs.getString("perfil"));
 
-		aluno.addMatricula(matricula);
 		aluno.setUsuario(usuario);
-
+		aluno.setMatricula(matricula);
 		
 		return aluno;
 	}

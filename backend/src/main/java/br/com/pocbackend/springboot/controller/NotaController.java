@@ -33,6 +33,13 @@ public class NotaController {
 	public List<Nota>retrieveNotas() {
 		return NotaService.retrieveAllNotas();
 	}
+	
+	@ApiOperation("Notas Por Matricula")
+	@GetMapping(path = "/notas/aluno/{idMatricula}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Nota>retrieveNotasPorMatricula(@PathVariable Long idMatricula) {
+		return NotaService.retrieveAllNotasPorMatricula(idMatricula);
+	}
 
 	@ApiOperation("Notas - id")
 	@GetMapping(path="/notas/{idNota}", produces = MediaType.APPLICATION_JSON_VALUE)
@@ -52,9 +59,10 @@ public class NotaController {
 	public int putNota(@RequestBody Nota nota) {
 		return NotaService.updateNota(nota);
 	}
-	
+
 	@ApiOperation("Nota - delete")
-	@DeleteMapping(path="/notas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	@DeleteMapping(path="/notas/{idNota}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
 	public int deleteNota(@PathVariable Long idNota) {
 		return NotaService.deleteNota(idNota);
 	}

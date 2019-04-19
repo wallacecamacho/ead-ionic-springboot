@@ -26,9 +26,10 @@ public class AvaliacaoService {
 				new AvaliacaoMapper());
 	}
 	
-	public Avaliacao retrieveAvaliacaoPorCurso(Long idCurso) {
-		return (Avaliacao) jdbcTemplate.queryForObject(Queries.LIST_AVALIACAO_BY_ID_CURSO, new Object[] { idCurso },
+	public List<Avaliacao> retrieveAvaliacoesPorCurso(Long idCurso) {
+		List<Avaliacao> avaliacoes =  jdbcTemplate.query(Queries.LIST_AVALIACAO_BY_ID_CURSO, new Object[] { idCurso },
 				new AvaliacaoMapper());
+		return avaliacoes;
 	}
 	
 	public Avaliacao insertAvaliacao(Avaliacao avaliacao) {

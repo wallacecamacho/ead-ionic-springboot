@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.pocbackend.springboot.model.Usuario;
@@ -20,7 +21,7 @@ import io.swagger.annotations.ApiOperation;
 
 @RestController
 @Api(value = "UsuarioController")
-@CrossOrigin(origins = "*")
+@CrossOrigin(value="*")
 public class UsuarioController {
 
 	@Autowired
@@ -31,11 +32,12 @@ public class UsuarioController {
 	public List<Usuario> retrieveAlunos() {
 		return usuarioService.retrieveAllUsuarios();
 	}
-
+	
 	@ApiOperation("usuarios - id")
-	@GetMapping(path="/usuarios/{idUsuario}", produces = MediaType.APPLICATION_JSON_VALUE)
-	public Usuario retrieveAluno(@PathVariable Long idUsuario) {
-		return usuarioService.retrieveUsuario(idUsuario);
+	@GetMapping(path="/usuarios/{email}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public Usuario retrieveAluno(@PathVariable String email) {
+		return usuarioService.retrieveUsuario(email);
 	}
 	
 	@ApiOperation("usuario - post")
@@ -52,8 +54,8 @@ public class UsuarioController {
 	
 	
 	@ApiOperation("usuario - delete")
-	@DeleteMapping(path="/usuarios", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
-	public int deleteAluno(@PathVariable Long idUsuario) {
-		return usuarioService.deleteUsuario(idUsuario);
+	@DeleteMapping(path="/usuarios/{email}", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
+	public int deleteAluno(@PathVariable String email) {
+		return usuarioService.deleteUsuario(email);
 	}
 }

@@ -2,8 +2,6 @@ package br.com.pocbackend.springboot.model;
 
 import java.io.Serializable;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 
 /**
  * The persistent class for the AVALIACOES database table.
@@ -14,10 +12,9 @@ public class Nota implements Serializable {
 
 	private Long idNota;
 	private Double nota;
-	@JsonIgnore
 	private Curso curso;
-	@JsonIgnore
 	private Avaliacao avaliacao;
+	private Aluno aluno;
 
 	public Nota() {
 	}
@@ -53,6 +50,16 @@ public class Nota implements Serializable {
 	public void setAvaliacao(Avaliacao avaliacao) {
 		this.avaliacao = avaliacao;
 	}
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+	
 
 
 

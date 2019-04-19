@@ -3,7 +3,6 @@ package br.com.pocbackend.springboot.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
@@ -24,7 +23,13 @@ public class MatriculaService {
 
 	public Matricula retrieveMatricula(Long idMatricula) {
 		return (Matricula) jdbcTemplate.queryForObject(Queries.LIST_MATRICULA_BY_ID, new Object[] { idMatricula },
-				new BeanPropertyRowMapper<Matricula>(Matricula.class));
+				new MatriculaMapper());
+	}
+	
+	public List<Matricula> retrieveMatriculaPorCursos(Long idCurso) {
+		List<Matricula> alunos = jdbcTemplate.query(Queries.LIST_MATRICULA_BY_ID_CURSO, new Object[] { idCurso },
+				new MatriculaMapper());
+		return alunos;
 	}
 	
 	public int insertMatricula(Matricula matricula) {		

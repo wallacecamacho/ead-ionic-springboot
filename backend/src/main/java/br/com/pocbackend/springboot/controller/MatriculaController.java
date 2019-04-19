@@ -39,6 +39,13 @@ public class MatriculaController {
 		return matriculaService.retrieveMatricula(idMatricula);
 	}
 	
+	@ApiOperation("Matriculas - id")
+	@GetMapping(path="/matriculas/cursos/{idCurso}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseBody
+	public List<Matricula> retrieveMatriculaPorCursos(@PathVariable Long idCurso) {
+		return matriculaService.retrieveMatriculaPorCursos(idCurso);
+	}
+	
 	@ApiOperation("Matricula - post")
 	@PostMapping(path="/matriculas", produces = MediaType.APPLICATION_JSON_VALUE, consumes = MediaType.APPLICATION_JSON_VALUE)
 	public int postMatricula(@RequestBody Matricula matricula) {

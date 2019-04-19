@@ -16,14 +16,18 @@ public class Aluno implements Serializable {
 
 	private Long idAluno;
 	private String cpf;
+	private String nome;
 	private String endereco;
 	private String estado;
 	private String municipio;
 	private String telefone;	
+	private Curso curso;
+	private Matricula matricula;
+	private Nota nota;
 	@JsonIgnore
-	private Usuario usuario;	
-	@JsonIgnore
-	private List<Matricula> matriculas;
+	private Usuario usuario;
+	private List<Avaliacao> avaliacoes;
+
 
 	public Aluno() {
 	}
@@ -36,6 +40,27 @@ public class Aluno implements Serializable {
 	public void setIdAluno(Long idAluno) {
 		this.idAluno = idAluno;
 	}
+	
+	
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+
+	public Nota getNota() {
+		return nota;
+	}
+
+
+	public void setNota(Nota nota) {
+		this.nota = nota;
+	}
+
 
 	public String getCpf() {
 		return this.cpf;
@@ -84,27 +109,42 @@ public class Aluno implements Serializable {
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
 	}
-
-	public List<Matricula> getMatriculas() {
-		return this.matriculas;
+	
+	public Curso getCurso() {
+		return curso;
 	}
 
-	public void setMatriculas(List<Matricula> matriculas) {
-		this.matriculas = matriculas;
+	public void setCurso(Curso curso) {
+		this.curso = curso;
 	}
 
-	public Matricula addMatricula(Matricula matricula) {
-		getMatriculas().add(matricula);
-		matricula.setAluno(this);
-
+	public Matricula getMatricula() {
 		return matricula;
 	}
 
-	public Matricula removeMatricula(Matricula matricula) {
-		getMatriculas().remove(matricula);
-		matricula.setAluno(null);
-
-		return matricula;
+	public void setMatricula(Matricula matricula) {
+		this.matricula = matricula;
 	}
+	
+	public List<Avaliacao> getAvaliacoes() {
+		return avaliacoes;
+	}
+
+
+	public void setAvaliacoes(List<Avaliacao> avaliacoes) {
+		this.avaliacoes = avaliacoes;
+	}
+
+
+	public Avaliacao addAvaliacao(Avaliacao avaliacao) {
+		getAvaliacoes().add(avaliacao);
+		return avaliacao;
+	}
+
+	public Avaliacao removeMatricula(Avaliacao avaliacao) {
+		getAvaliacoes().remove(avaliacao);
+		return avaliacao;
+	}
+
 
 }
