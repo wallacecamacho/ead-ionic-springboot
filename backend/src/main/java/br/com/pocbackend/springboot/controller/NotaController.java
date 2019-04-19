@@ -35,7 +35,7 @@ public class NotaController {
 	}
 	
 	@ApiOperation("Notas Por Matricula")
-	@GetMapping(path = "/notas/aluno/{idMatricula}", produces = MediaType.APPLICATION_JSON_VALUE)
+	@GetMapping(path = "/notas/alunos/{idMatricula}", produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
 	public List<Nota>retrieveNotasPorMatricula(@PathVariable Long idMatricula) {
 		return NotaService.retrieveAllNotasPorMatricula(idMatricula);
