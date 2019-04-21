@@ -1,17 +1,15 @@
-App para Alunos
+Projeto técnico 
 
 Sistema referente no Gerenciamento de anotações pessoais: perfil de usuário, cursos, notas, avaliação e boletim (v1.0.0).
 
 ==========
-**App para Alunos** features about this new and definitive release: Angular 7 + Ionic 4 
 
 * Angular 7
-* @ionic/angular 4.0.0
-* Ionic Native 5
-* Ionic 4 Components/API Samples
+* @ionic/angular 4.0
 
-
-<img src="https://github.com/crisgit/frontend/blob/master/src/assets/img/login.png" width="128" align="left"><img src="https://github.com/crisgit/frontend/blob/master/src/assets/img/telacadastro.png" width="128" align="left"><img src="https://github.com/crisgit/frontend/blob/master/src/assets/img/telacadastro1.png" width="128" align="left"><img src="https://github.com/crisgit/frontend/blob/master/src/assets/img/teladehome.png" width="128" align="left"><img src="https://github.com/crisgit/frontend/blob/master/src/assets/img/teladomenu.png" width="128" align="left"><img src="https://github.com/crisgit/frontend/blob/master/src/assets/img/sobre.png" width="128" align="left">
+<img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/login.png" width="128" align="left" />
+<img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/home.png" width="128" align="left" />
+<img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/home2.png" width="128" align="left" />
 
 <br><br><br><br><br><br>
 
@@ -32,6 +30,3 @@ $ npm install
 $ ionic serve -l
 ```
 
-___
-
-## Trabalho para fins didáticos e como parte integrante da conclusão do curso de Pós-Graduação.
