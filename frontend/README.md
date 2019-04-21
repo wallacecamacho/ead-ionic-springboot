@@ -1,6 +1,6 @@
 Projeto técnico 
 
-Sistema referente no Gerenciamento de anotações pessoais: perfil de usuário, cursos, notas, avaliação e boletim (v1.0.0).
+Sistema para inclusão de notas, curos e avaliações.
 
 ==========
 
