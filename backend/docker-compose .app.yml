@@ -1,0 +1,26 @@
+version: '3.3'
+volumes:
+  data:
+services:
+
+  app-ead-service:
+    build:
+       context: ./
+       dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    env_file:
+      - ././api.env
+    restart: "no"
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - lognet
+
+
+networks:
+  lognet:
+    driver: bridge
+

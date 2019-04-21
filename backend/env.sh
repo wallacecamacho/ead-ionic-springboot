@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export MYSQL_ROOT_PASSWORD=password
+echo MYSQL_ROOT_PASSWORD=$MYSQL_ROOT_PASSWORD
+export MYSQL_HOST=db-mysql
+echo MYSQL_HOST=$MYSQL_HOST
+export MYSQL_USER="user"
+echo MYSQL_USER=$MYSQL_USER
+export MYSQL_DB="hello"
+echo MYSQL_DB=$MYSQL_DB
+export MYSQL_PASSWORD="password"
+echo MYSQL_PASSWORD=$MYSQL_PASSWORD
+

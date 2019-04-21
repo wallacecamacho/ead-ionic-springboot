@@ -1,0 +1,43 @@
+version: '3.3'
+volumes:
+  data:
+services:
+
+  db-mysql:
+    image: mysql:5.7
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./dump.sql:/docker-entrypoint-initdb.d/dump.sql
+    environment:
+      - MYSQL_ROOT_PASSWORD=abc123
+      - MYSQL_DATABASE=hello
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=abc123
+    networks:
+      - lognet
+
+
+  app-ead-service:
+    build:
+       context: ./
+       dockerfile: Dockerfile
+    ports:
+      - 8080:8080
+    env_file:
+      - ././api.env
+    restart: "no"
+    depends_on:
+        - db-mysql
+    logging:
+      options:
+        max-size: "10m"
+        max-file: "10"
+    networks:
+      - lognet
+
+
+networks:
+  lognet:
+    driver: bridge
+
