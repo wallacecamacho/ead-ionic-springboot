@@ -11,8 +11,6 @@ Sistema referente no Gerenciamento de anotações pessoais: perfil de usuário, 
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/home.png" width="128" align="left" />
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/home2.png" width="128" align="left" />
 
-<br><br><br><br><br><br>
-
 ---
 
 Requesitos:
