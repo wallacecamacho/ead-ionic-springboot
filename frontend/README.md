@@ -25,4 +25,6 @@ $ ionic serve -l
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/login.png" width="128" align="left" />
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/home.png" width="128" align="left" />
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/home2.png" width="128" align="left" />
+<img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/avaliacoes.png" width="128" align="left" />
+<img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/nota.png" width="128" align="left" />
 
