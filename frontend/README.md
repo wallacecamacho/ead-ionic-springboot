@@ -2,12 +2,9 @@ Projeto técnico
 
 Sistema para inclusão de notas, curos e avaliações.
 
-==========
-
 * Angular 7
 * @ionic/angular 4.0
 
----
 
 Requesitos:
 ------------
