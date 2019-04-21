@@ -1,4 +1,6 @@
-/target/
+/target/classes
+/target/maven-archiver
+/target/maven-status
 
 .settings
 .project
