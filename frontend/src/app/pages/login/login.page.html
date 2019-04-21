@@ -1,0 +1,69 @@
+<ion-content padding class="animated fadeIn login auth-page">
+    <div class="theme-bg"></div>
+    <div class="auth-content">
+  
+      <!-- Logo -->
+      <div padding-horizontal text-center class="animated fadeInDown">
+        <div class="logo"></div>
+        <h4 no-margin>
+          <ion-text color="light" class="fw700">
+            App EAD - Notas <br>
+            Sistema de Alunos
+          </ion-text>
+        </h4>
+      </div>
+  
+      <!-- Login form -->
+      <form [formGroup]="onLoginForm" class="list-form">
+        <ion-item no-padding class="animated fadeInUp">
+          <ion-label position="floating">
+            <ion-icon name="mail" item-start></ion-icon>
+            E-mail
+          </ion-label>
+          <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('required')">
+          <ion-text color="warning">
+            *Campo Obrigatório
+          </ion-text>
+        </p>
+        <p ion-text color="warning" class="text08" *ngIf="onLoginForm.get('email').touched && onLoginForm.get('email').hasError('email')">
+            <ion-text color="warning">
+              *Email Inválido
+            </ion-text>
+        </p>
+  
+        <ion-item no-padding class="animated fadeInUp">
+          <ion-label position="floating">
+            <ion-icon name="lock" item-start></ion-icon>
+            Senha
+          </ion-label>
+          <ion-input color="secondary" type="password" formControlName="senha"></ion-input>
+        </ion-item>
+        <p ion-text color="warning" class="text08" *ngIf="onLoginForm.get('senha').touched && onLoginForm.get('senha').hasError('required')">
+          <ion-text color="warning">
+            *Campo Obrigatório
+          </ion-text>
+        </p>
+      </form>
+
+      <div>
+        <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="goToHome()" [disabled]="!onLoginForm.valid" tappable>
+          <ion-icon name="log-in"></ion-icon>
+          Entrar
+        </ion-button>
+  
+      </div>
+  
+      <!-- Other links -->
+      <div text-center margin-top>
+        <span (click)="goToRegister()" class="paz" tappable>
+          <ion-text color="light">
+            Novo aqui?<br>  <ion-button shape="round">Matricule-se aqui!</ion-button>
+          </ion-text>
+        </span>
+      </div>
+     
+  
+    </div>
+  </ion-content>

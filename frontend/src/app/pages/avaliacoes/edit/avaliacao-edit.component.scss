@@ -1,0 +1,21 @@
+:host {
+  ion-content {
+
+    @media (min-width: 901px) and (max-width: 1500px) {
+
+      --background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary))
+     
+      }
+
+      @media (min-width: 240px) and (max-width: 900px) {
+             
+
+      position: absolute;
+      overflow: auto;
+      background-size: cover;
+      }
+
+    /*--background: linear-gradient(135deg, var(--ion-color-dark), var(--ion-color-primary))*/
+
+  }
+}

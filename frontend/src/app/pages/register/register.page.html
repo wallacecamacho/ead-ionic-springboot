@@ -1,0 +1,215 @@
+<ion-content padding class="login auth-page">
+
+  <div class="auth-content">
+    <!-- Logo -->
+    <div padding-horizontal text-center>
+      <div class="logo"></div>
+      <h3 no-margin>
+        <ion-text color="light" class="fw700">
+          <ion-text color="light">Cadastro</ion-text>
+        </ion-text>
+      </h3>
+    </div>
+
+    <!-- Register form -->
+    <form [formGroup]="onRegisterForm" class="list-form">
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Nome Completo
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="fullName"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('fullName').touched && onRegisterForm.get('fullName').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          E-mail
+        </ion-label>
+        <ion-input color="secondary" type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('email').touched && onRegisterForm.get('email').hasError('email')">
+        <ion-text color="warning">
+          *Email inválido!
+        </ion-text>
+      </p>
+  
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Cpf
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="cpf"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('cpf').touched && onRegisterForm.get('cpf').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Telefone
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="telefone"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('telefone').touched && onRegisterForm.get('telefone').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding >
+          <ion-label position="floating">
+            <ion-icon name="create" item-start></ion-icon>
+            Estado
+          </ion-label>
+          <ion-select  okText="Confirmar" cancelText="Cancelar" formControlName="estado" color="warning" >
+              <ion-select-option value="AC" color="warning">AC</ion-select-option>
+              <ion-select-option value="AL">AL</ion-select-option>
+              <ion-select-option value="AP">AP</ion-select-option>
+              <ion-select-option value="AM">AM</ion-select-option>
+              <ion-select-option value="BA">BA</ion-select-option>
+              <ion-select-option value="CE">CE</ion-select-option>
+              <ion-select-option value="DF">DF</ion-select-option>
+              <ion-select-option value="ES">ES</ion-select-option>
+              <ion-select-option value="GO">GO</ion-select-option>
+              <ion-select-option value="MA">MA</ion-select-option>
+              <ion-select-option value="MT">MT</ion-select-option>
+              <ion-select-option value="MS">MS</ion-select-option>
+              <ion-select-option value="MG">MG</ion-select-option>
+              <ion-select-option value="PA">PA</ion-select-option>
+              <ion-select-option value="PB">PB</ion-select-option>
+              <ion-select-option value="PR">PR</ion-select-option>
+              <ion-select-option value="PE">PE</ion-select-option>
+              <ion-select-option value="PI">PI</ion-select-option>
+              <ion-select-option value="RJ">RJ</ion-select-option>
+              <ion-select-option value="RN">RN</ion-select-option>
+              <ion-select-option value="RS">RS</ion-select-option>
+              <ion-select-option value="RO">RO</ion-select-option>
+              <ion-select-option value="RR">RR</ion-select-option>
+              <ion-select-option value="SC">SC</ion-select-option>
+              <ion-select-option value="SP">SP</ion-select-option>
+              <ion-select-option value="SE">SE</ion-select-option>
+              <ion-select-option value="TO">TO</ion-select-option>
+
+          </ion-select>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onRegisterForm.get('estado').touched && onRegisterForm.get('estado').hasError('required')">
+          <ion-text color="warning">
+            *Campo Obrigatório!
+          </ion-text>
+        </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Município
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="municipio"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('municipio').touched && onRegisterForm.get('municipio').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="mail" item-start></ion-icon>
+          Endereço
+        </ion-label>
+        <ion-input color="secondary" type="text" formControlName="endereco"></ion-input>
+      </ion-item>
+      <p ion-text class="text08" *ngIf="onRegisterForm.get('endereco').touched && onRegisterForm.get('endereco').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+
+      <ion-item no-padding >
+          <ion-label position="floating">
+            <ion-icon name="create" item-start></ion-icon>
+            Curso
+          </ion-label>
+          <ion-select trackBy="idCurso" okText="Confirmar" cancelText="Cancelar" formControlName="idCurso">
+            <ion-select-option [value]="curso.idCurso" *ngFor="let curso of listCursos">{{curso.nome + ' ' + curso.codigoCurso}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <p ion-text class="text08" *ngIf="onRegisterForm.get('idCurso').touched && onRegisterForm.get('idCurso').hasError('required')">
+          <ion-text color="warning">
+            *Campo Obrigatório!
+          </ion-text>
+        </p>
+
+      <ion-item no-padding class="animated fadeInUp">
+        <ion-label position="floating">
+          <ion-icon name="lock" item-start></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input color="secondary" type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <p ion-text color="warning" class="text08" *ngIf="onRegisterForm.get('password').touched && onRegisterForm.get('password').hasError('required')">
+        <ion-text color="warning">
+          *Campo Obrigatório!
+        </ion-text>
+      </p>
+    </form>
+
+    <div margin-top>
+      <ion-button icon-left size="medium" expand="full" shape="round" color="dark" (click)="signUp()" [disabled]="!onRegisterForm.valid"
+        tappable>
+        <ion-icon name="log-in"></ion-icon>
+        Cadastrar
+      </ion-button>
+
+      <p text-center>
+        <ion-text color="light">
+          Ou Entrar com:
+        </ion-text>
+      </p>
+<!--
+      <ion-grid class="btn-group">
+        <ion-row>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-facebook"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-twitter"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="4">
+            <ion-button shape="round" expand="full" fill="outline" color="tertiary">
+              <ion-icon slot="icon-only" name="logo-googleplus"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+-->
+    </div>
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span (click)="goToLogin()" tappable>
+        <ion-text color="light">
+          <ion-button shape="round" expand="full" fill="outline" color="tertiary">Eu tenho uma conta !</ion-button>
+        </ion-text>
+      </span>
+    </div>
+
+  </div>
+</ion-content>

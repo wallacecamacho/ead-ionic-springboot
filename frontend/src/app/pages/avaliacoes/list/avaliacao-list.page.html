@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Avaliações</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  <ion-card >
+    <ion-button expand="full" color="dark" no-margin (click)="novo()">
+     Nova Avaliação
+    </ion-button>
+  </ion-card>
+
+  <ion-list *ngFor="let type of listAvaliacoes">
+      <ion-item (click)="edit(type.idAvaliacao)">{{ type.nomeAvaliacao }}</ion-item>
+  </ion-list>
+  
+</ion-content>

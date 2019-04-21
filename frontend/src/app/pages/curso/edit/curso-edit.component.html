@@ -1,0 +1,88 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar Curso</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+
+<div>
+  <!-- Logo -->
+  <div padding-horizontal text-center>
+    <div class="logo"></div>
+    <h3 no-margin>
+    </h3>
+  </div>
+
+  <!-- Register form -->
+  <form [formGroup]="form" class="list-form">
+    <ion-item no-padding >
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Nome
+      </ion-label>
+      <ion-input color="secondary" type="text" formControlName="nome"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="form.get('nome').touched && form.get('nome').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+
+    <ion-item no-padding >
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Código do Curso
+      </ion-label>
+      <ion-input color="secondary" type="text" formControlName="codigoCurso"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="form.get('codigoCurso').touched && form.get('codigoCurso').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+
+    <ion-item no-padding class="animated">
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Ano Semestre
+      </ion-label>
+      <ion-input color="anoSemestre" type="text" formControlName="anoSemestre"></ion-input>
+    </ion-item>
+    <p ion-text color="warning" class="text08" *ngIf="form.get('anoSemestre').touched && form.get('anoSemestre').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+  </form>
+
+  <div margin-top>
+
+    <ion-grid class="btn-group">
+      <ion-row>
+        <ion-col size="6" *ngIf="pageType === 'edit'">
+              <ion-button shape="round" expand="full" fill="outline" color="secundary" (click)="save()">
+                <ion-icon slot="icon-only" name="create"></ion-icon>
+              </ion-button>
+        </ion-col>
+        <ion-col size="6" *ngIf="pageType === 'new'">
+          <ion-button shape="round" expand="full" fill="outline" color="secundary" (click)="add()">
+            <ion-icon slot="icon-only" name="add"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" expand="full" fill="outline" color="secundary" (click)="deleteAlert()">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+
+</div>
+</ion-content>

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-button size="small" shape="round" (click)="closeModal()" color="tertiary">
+        <ion-icon slot="start" name="close"></ion-icon> Fechar
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content>
+  <ion-card class="bg-white">
+    <div padding-horizontal text-center class="animated fadeInDown">
+      <h4 no-margin>
+        <ion-text class="fw700">
+          Boletim de notas
+        </ion-text>
+      </h4>
+    </div>
+    <ion-list *ngFor="let type of listBoletim">
+      <h4>
+        <ion-item>
+          <ion-label class="fw700">{{ type.avaliacao.nomeAvaliacao }}</ion-label>
+          <ion-note class="fw500" slot="end">{{ type.nota }}</ion-note>
+        </ion-item>
+      </h4>
+    </ion-list>
+    <div padding-horizontal text-left class="animated fadeInDown">
+      <h4>
+        <ion-item>
+          <ion-label >Média: {{notaTotal}}</ion-label>
+          <ion-label slot="end">{{situacao}}</ion-label>
+        </ion-item>
+      </h4>
+    </div>
+  </ion-card>
+
+</ion-content>

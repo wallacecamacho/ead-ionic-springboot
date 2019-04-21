@@ -1,0 +1,108 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Editar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding class="form-content">
+
+<div>
+  <!-- Logo -->
+  <div padding-horizontal text-center>
+    <div class="logo"></div>
+    <h3 no-margin>
+    </h3>
+  </div>
+
+  <!-- Register form -->
+  <form [formGroup]="form" class="list-form">
+    <ion-item no-padding >
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Nota
+      </ion-label>
+      <ion-input color="secondary" type="text" formControlName="nota"></ion-input>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="form.get('nota').touched && form.get('nota').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+
+    <ion-item no-padding >
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Curso
+      </ion-label>
+      <ion-select trackBy="idCurso" okText="Confirmar" cancelText="Cancelar" formControlName="idCurso" (ionChange)="loadMatriculas($event);">
+        <ion-select-option [value]="curso.idCurso" *ngFor="let curso of listCursos">{{curso.nome + ' ' + curso.codigoCurso}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="form.get('idCurso').touched && form.get('idCurso').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+
+    <ion-item no-padding >
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Avaliações
+      </ion-label>
+      <ion-select trackBy="idAvaliacao" okText="Confirmar" cancelText="Cancelar" formControlName="idAvaliacao">
+        <ion-select-option [value]="avaliacao.idAvaliacao" *ngFor="let avaliacao of listAvaliacoes">{{avaliacao.nomeAvaliacao}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="form.get('idAvaliacao').touched && form.get('idAvaliacao').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+
+    <ion-item no-padding >
+      <ion-label position="floating">
+        <ion-icon name="create" item-start></ion-icon>
+        Matriculas
+      </ion-label>
+      <ion-select trackBy="idMatricula" okText="Confirmar" cancelText="Cancelar" formControlName="idMatricula">
+        <ion-select-option [value]="matricula.idMatricula" *ngFor="let matricula of listMatriculas">{{matricula.idMatricula}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <p ion-text class="text08" *ngIf="form.get('idMatricula').touched && form.get('idMatricula').hasError('required')">
+      <ion-text color="warning">
+        *Campo Obrigatório!
+      </ion-text>
+    </p>
+
+  </form>
+
+  <div margin-top>
+
+    <ion-grid class="btn-group">
+      <ion-row>
+        <ion-col size="6" *ngIf="pageType === 'edit'">
+              <ion-button shape="round" expand="full" fill="outline" color="secundary" (click)="save()">
+                <ion-icon slot="icon-only" name="create"></ion-icon>
+              </ion-button>
+        </ion-col>
+        <ion-col size="6" *ngIf="pageType === 'new'">
+          <ion-button shape="round" expand="full" fill="outline" color="secundary" (click)="add()">
+            <ion-icon slot="icon-only" name="create"></ion-icon>
+          </ion-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-button shape="round" expand="full" fill="outline" color="secundary" (click)="deleteAlert()">
+            <ion-icon slot="icon-only" name="trash"></ion-icon>
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+
+</div>
+</ion-content>
