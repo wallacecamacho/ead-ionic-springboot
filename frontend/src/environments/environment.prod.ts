@@ -1,9 +1,9 @@
 export const environment = {
     production: true,
     hmr       : false,
-    appName: 'Imobli Auth',
-    apiUrl: 'http://app.imobli.com.br/api',
-    domainApp: 'imobli.com.br',
+    appName: '',
+    apiUrl: 'http://ec2-54-173-242-40.compute-1.amazonaws.com:8080',
+    domainApp: 'ec2-54-173-242-40.compute-1.amazonaws.com',
     cacheMaxAge: 3600,
     tokenApp: 'app.tkn.ath.gen',
     googleAnalytics: {

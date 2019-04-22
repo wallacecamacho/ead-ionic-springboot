@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     hmr       : false,
-    appName: 'Imobli Auth',
+    appName: '',
     apiUrl: 'http://localhost:8080',
     domainApp: 'imobli.com.br',
     cacheMaxAge: 3600,

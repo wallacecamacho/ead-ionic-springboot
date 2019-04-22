@@ -26,7 +26,7 @@ services:
       - 8080:8080
     env_file:
       - ././api.env
-    restart: "no"
+    restart: "yes"
     depends_on:
         - db-mysql
     logging:
