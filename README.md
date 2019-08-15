@@ -9,6 +9,9 @@
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/notas.png" width="120" align="left" />
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/cadastro.png" width="120" align="left" />
 
+![uml](https://user-images.githubusercontent.com/1315080/63123503-82ef8d80-bf7f-11e9-93a0-84810c86f292.png)
+
+
 ![sequencia](https://user-images.githubusercontent.com/1315080/63123347-27250480-bf7f-11e9-8166-e6ac19d2a571.png)
 
 
