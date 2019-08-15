@@ -35,3 +35,6 @@ $ ionic serve -l
 
 ![20190815163106](https://user-images.githubusercontent.com/1315080/63122410-14a9cb80-bf7d-11e9-9fd6-c2e1d3634b9f.png)
 
+![20190815163218](https://user-images.githubusercontent.com/1315080/63122629-97cb2180-bf7d-11e9-8850-5cc91d5eaa80.png)
+
+
