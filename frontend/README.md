@@ -29,5 +29,5 @@ $ ionic serve -l
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/notas.png" width="120" align="left" />
 <img src="https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/cadastro.png" width="120" align="left" />
 
-![alt text](https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/frontend/src/assets/img/cadastro.png)
+![alt text](https://github.com/wallacecamacho/ead-ionic-springboot/blob/master/images/20190815162954.png)
 
